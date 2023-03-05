@@ -25,9 +25,16 @@ class _NewTransactionState extends State<NewTransaction> {
     final enteredTitle = _titleController.text;
     final enteredAmount = double.parse(_amountController.text);
 
-    if (enteredTitle.isEmpty || enteredAmount <= 0) {
+    if (enteredTitle.isEmpty || enteredAmount <= 0 || _selectDate == null) {
       return;
     }
+    // if (_selectDate == null) {
+    //   widget.addTx(_titleController.text, double.parse(_amountController.text),
+    //       DateTime.now());
+    // } else {
+    //   widget.addTx(_titleController.text, double.parse(_amountController.text),
+    //       _selectDate);
+    // }
 
     widget.addTx(_titleController.text, double.parse(_amountController.text),
         _selectDate);
